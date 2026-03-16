@@ -2,9 +2,6 @@ NovaCare Guardian: Unified Healthcare & Cold-Chain Logistics Agentic Network
 =============================================================================
 # Naveenkumar & Sharan
 
-## Video Demo
-![NovaCare SuperApp Demo Video](/Users/sharan/Documents/New project/NovaCare-Guardian-SuperApp/docs/novacare_superapp_demo.webp)
-
 Overview
 --------
 NovaCare Guardian is a superior, end-to-end autonomous logistics network. By combining the fragmented complexities of hospital administration with the critical sensitivities of global pharmaceutical cold-chains, this system deploys specialized Amazon Nova reasoning agents to secure the entire lifecycle of patient care—from the temperature-controlled transport of life-saving biologics to the autonomous orchestrated admission of patients and insurance pre-authorization.
