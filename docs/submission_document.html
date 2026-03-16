@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NovaCare Guardian - Submission</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            padding: 2in 1in 1in 1in;
+            box-sizing: border-box;
+            page-break-after: always;
+            position: relative;
+        }
+
+        /* Front Page Styles */
+        .front-page {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2in;
+        }
+
+        .front-page h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .front-page h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .front-page .authors {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-top: 5rem;
+        }
+
+        /* Content Pages */
+        h2 { color: #0f172a; border-bottom: 2px solid #38bdf8; padding-bottom: 0.5rem; margin-top: 0;}
+        h3 { color: #334155; margin-top: 1.5rem;}
+        p { text-align: justify; margin-bottom: 1rem;}
+        
+        .gallery-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .gallery-caption {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: -1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #cbd5e1;
+        }
+
+        ul { margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: Title -->
+    <div class="page front-page">
+        <h1>NovaCare Guardian</h1>
+        <h2>Unified Healthcare & Cold-Chain Logistics Agentic Network</h2>
+        <div class="authors">A Hackathon Submission by<br><b>Naveenkumar & Sharan</b></div>
+    </div>
+
+    <!-- PAGE 2: Overview & Inspiration -->
+    <div class="page">
+        <h2>Inspiration</h2>
+        <p>The global pharmaceutical supply chain is incredibly fragile, and hospital operations are mired in administrative bottlenecks. Annually, millions of dollars worth of critical biologics—like vaccines and life-saving organs—spoil due to temperature excursions during transit. Simultaneously, when these critical materials do arrive successfully at a hospital, the facilities are often unprepared, leading to deadly delays because emergency beds haven't been secured or insurance pre-authorization hasn't cleared.</p>
+        <p>We were inspired to unify these two completely disjointed worlds (macro-logistics of the cold chain and micro-logistics of hospital administration) using a single, intelligent, multimodal agentic framework.</p>
+
+        <h2>What it does</h2>
+        <p><b>NovaCare Guardian</b> is a "SuperApp" operating system. It deploys specialized Amazon Nova reasoning agents to secure the entire lifecycle of patient care.</p>
+        <ul>
+            <li><b>Cold-Chain Guardian Agent:</b> Models live IoT temperature telemetry using real-time scrolling analytics. If an anomaly occurs (like an AC unit failure during transport causing a temperature spike), the AI flags it instantly.</li>
+            <li><b>Multimodal Triage:</b> Analyzes incoming voice transcripts from field technicians and visual images of compromised cargo seals to build a comprehensive root-cause analysis.</li>
+            <li><b>Agentic Orchestrator:</b> Once a critical reroute of medical supplies is confirmed, the system autonomously contacts the target hospital destination via a mesh-network of agents.</li>
+            <li><b>Hospital Logistics Agents:</b> Immediately and autonomously reserves an emergency intake bed (e.g., Bed 104) the moment the inbound threat is assessed.</li>
+            <li><b>Insurance Pre-Auth Fast-Track:</b> Uses compliance engine rules to automatically approve "Emergency Bypass" claims so medical staff can operate immediately upon arrival without financial friction.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 3: Technology and Build -->
+    <div class="page">
+        <h2>How we built it</h2>
+        <p>We architected a robust backend using Python and FastAPI, serving as the localized orchestration hub. We leverage LangGraph to orchestrate a stateful, cyclic workflow of specialized agents powered by Amazon Bedrock.</p>
+        
+        <h3>The SuperApp UI</h3>
+        <p>We avoided heavy frontend frameworks in favor of a raw, hyper-optimized Vanilla JS and CSS "Glassmorphism" dashboard. Tailored for 27-inch widescreen monitoring, the UI leverages HTML5 Canvas and Chart.js to render fluid, highly responsive live-telemetry animations. When incidents occur, the DOM dynamically alters its state to visualize the AI reasoning core in real-time terminal logs, providing the operator with instant, actionable clarity.</p>
+
+        <h3>Built With</h3>
+        <div class="tech-tags">
+            <span class="tech-tag">Amazon Nova Pro</span>
+            <span class="tech-tag">Amazon Nova Lite</span>
+            <span class="tech-tag">Amazon Bedrock</span>
+            <span class="tech-tag">AWS SDK (Boto3)</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">Python (FastAPI)</span>
+            <span class="tech-tag">Jinja2</span>
+            <span class="tech-tag">Vanilla JS / CSS3</span>
+            <span class="tech-tag">Chart.js</span>
+        </div>
+
+        <h2>Challenges we ran into</h2>
+        <p>Synchronizing the state between the macro-logistics (the moving truck's temperature sensor) and the micro-logistics (the hospital's exact bed grid) in a single UI was difficult. Ensuring the Chart.js animation smoothly handled the synthetic data stream while simultaneously allowing the Vanilla JS to traverse DOM boundaries to lock the hospital bed required precise asynchronous event handling.</p>
+
+        <h2>What we learned</h2>
+        <p>We learned how incredibly powerful agentic handoffs can be. By allowing a "shipping agent" to directly alert a "hospital admission agent", we bypass human communication delays entirely, transforming a reactive healthcare system into a proactive one.</p>
+    </div>
+
+    <!-- PAGE 4: Visuals -->
+    <div class="page" style="padding: 1in;">
+        <h2>System Visuals</h2>
+        
+        <img src="file:///Users/sharan/Documents/New project/NovaCare-Guardian-SuperApp/docs/gallery_1_nominal.png" class="gallery-img">
+        <div class="gallery-caption">Fig 1. The SuperApp Operating Center in Nominal State, showing baseline IoT telemetry.</div>
+
+        <img src="file:///Users/sharan/Documents/New project/NovaCare-Guardian-SuperApp/docs/gallery_2_ai_reasoning.png" class="gallery-img">
+        <div class="gallery-caption">Fig 2. Simulation Triggered: Temperature spike detected and Amazon Nova AI performs root cause analysis.</div>
+    </div>
+
+    <!-- PAGE 5: Visuals and Future -->
+    <div class="page" style="padding: 1in;">
+        <img src="file:///Users/sharan/Documents/New project/NovaCare-Guardian-SuperApp/docs/gallery_3_orchestrated.png" class="gallery-img">
+        <div class="gallery-caption">Fig 3. Final Agentic Handoff: The Hospital Administration node successfully reserves Bed 104 globally for the inbound emergency.</div>
+
+        <h2>What's next for NovaCare Guardian</h2>
+        <p>We plan to push this proof-of-concept closer to production by integrating directly with established EHR (Electronic Health Record) system APIs like Epic or Cerner. We also plan to integrate the Amazon Nova Vision models directly with real-time video streams from the cargo holds, rather than static images, allowing for continuous, unbroken multimodal vigilance over the world's most critical medical supply chains.</p>
+
+        <p style="text-align: center; margin-top: 3rem; color: #94a3b8; font-weight: 600;">
+            Orchestrating every mile and moment to accelerate life-saving care.
+        </p>
+    </div>
+
+</body>
+</html>
