@@ -29,3 +29,7 @@ Judging Criteria Alignment
 1.  **Technical Implementation (60 Percent):** Implements a highly complex multi-agent orchestrator utilizing Nova Act for robust workflow automation and Nova multimodal for vision tasks, synchronizing global supply chain data with local hospital state.
 2.  **Enterprise/Community Impact (20 Percent):** Directly prevents the spoilage of millions of dollars in vaccines and organs while simultaneously eliminating hospital administrative bottlenecks.
 3.  **Creativity and Innovation (20 Percent):** A highly novel approach integrating macro-logistics (global cold-chain) with micro-logistics (hospital administration) under a single autonomous AI umbrella.
+
+--------------------------
+
+**Made with 💚 from Naveenkumar & Sharan**
