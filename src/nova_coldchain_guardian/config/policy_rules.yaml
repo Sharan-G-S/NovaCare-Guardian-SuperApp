@@ -1,0 +1,4 @@
+temperature_breach_c: 8.0
+high_risk_score: 70
+critical_stock_days: 3
+backlog_days_alert: 7

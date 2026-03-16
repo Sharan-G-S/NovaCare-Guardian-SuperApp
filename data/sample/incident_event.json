@@ -1,0 +1,37 @@
+{
+  "clinic_id": "IN-KA-RURAL-042",
+  "region": "Karnataka Rural Belt",
+  "storage_unit_id": "RCW-19-A",
+  "stock_level_vials": 420,
+  "expected_daily_demand": 180,
+  "maintenance_backlog_days": 11,
+  "portal_url": "https://health-ops.example.org/cold-chain",
+  "sensor_readings": [
+    {
+      "timestamp": "2026-03-16T06:00:00Z",
+      "temperature_c": 7.4,
+      "humidity_pct": 52.0
+    },
+    {
+      "timestamp": "2026-03-16T07:00:00Z",
+      "temperature_c": 8.6,
+      "humidity_pct": 58.0
+    },
+    {
+      "timestamp": "2026-03-16T08:00:00Z",
+      "temperature_c": 9.2,
+      "humidity_pct": 60.0
+    },
+    {
+      "timestamp": "2026-03-16T09:00:00Z",
+      "temperature_c": 8.9,
+      "humidity_pct": 61.0
+    }
+  ],
+  "image_notes": [
+    "Visible condensation near top shelf and minor rust near hinge",
+    "Door seal appears loose on right side",
+    "Alarm off indicator observed during inspection"
+  ],
+  "voice_transcript": "Technician report says there was a power cut overnight and the compressor restarted late. Temperature alarm was active in the morning and staff reported not cooling properly."
+}
