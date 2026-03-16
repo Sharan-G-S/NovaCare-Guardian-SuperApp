@@ -1,5 +1,6 @@
 NovaCare: Autonomous Healthcare Logistics Network
 =================================================
+# Naveenkumar & Sharan
 
 Overview
 --------
@@ -23,3 +24,7 @@ Judging Criteria Alignment
 1. Technical Implementation (60 Percent): I implemented a multi-agent orchestrator utilizing Nova Act for robust workflow automation. The system architecture securely handles complex state transfers between specialized reasoning agents.
 2. Enterprise/Community Impact (20 Percent): I targeted healthcare administrative overhead, a massive enterprise challenge that directly delays patient care.
 3. Creativity and Innovation (20 Percent): I formulated a novel approach by inter-operating distinct reasoning agents over a shared state graph to replicate human hospital logistics coordination.
+
+
+
+Made with 💚 from Naveenkumar & Sharan
