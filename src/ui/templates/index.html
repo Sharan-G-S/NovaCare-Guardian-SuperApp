@@ -6,6 +6,8 @@
     <title>NovaCare Guardian | Operating Center</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for Advanced Visuals -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -21,10 +23,10 @@
             </div>
         </header>
 
-        <!-- Main Content Grid -->
-        <main class="dashboard-grid">
+        <!-- Main Content Layout (3 Columns for Wide Monitor) -->
+        <main class="dashboard-wide-layout">
             
-            <!-- Left Column: Global Cold Chain (Macro-Logistics) -->
+            <!-- Left Column: Global Cold Chain Telemetry -->
             <section class="panel cold-chain-panel">
                 <div class="panel-header">
                     <h2>Global Cold Chain</h2>
@@ -44,62 +46,81 @@
                     </div>
                 </div>
 
-                <div class="card evidence-card">
-                    <div class="card-title">Technician Voice Triage & Visual Audit</div>
-                    <div class="transcript-box" id="transcript-box">
-                        <p class="empty-state">No anomalous telemetry detected. Waiting for field reports...</p>
+                <!-- Advanced Visual: Live Chart -->
+                <div class="card chart-card">
+                    <div class="card-title">Live Sensor Telemetry Stream (Avg)</div>
+                    <div class="chart-container">
+                        <canvas id="telemetryChart"></canvas>
                     </div>
                 </div>
 
-                <div class="action-bar">
-                    <button class="btn btn-primary" id="btn-simulate">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M12 8v4l3 3"></path></svg>
-                        Simulate AI Reroute Incident
+            </section>
+
+            <!-- Center Column: Triage & Action center -->
+            <section class="panel action-panel">
+                 <div class="panel-header">
+                    <h2>Incident Analysis & Triage</h2>
+                    <span class="badge primary">Nova AI Core</span>
+                </div>
+                
+                 <div class="card evidence-card">
+                    <div class="card-title">Technician Voice Triage & Visual Audit</div>
+                    <div class="transcript-box" id="transcript-box">
+                        <p class="empty-state">System nominal. Continuous multimodal monitoring active. No field reports flagged.</p>
+                    </div>
+                </div>
+
+                <div class="action-bar vertical-action">
+                    <button class="btn btn-primary btn-large" id="btn-simulate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M12 8v4l3 3"></path></svg>
+                        Simulate Catastrophic Logistics Failure
                     </button>
                     <div id="loading-spinner" class="spinner hidden"></div>
                 </div>
                 
                 <div id="ai-response-box" class="response-box hidden">
-                    <h3>Nova AI Root Cause Analysis</h3>
+                    <h3>Nova AI Root Cause & Handoff</h3>
                     <p id="ai-summary"></p>
-                    <div class="action-taken" id="ai-action"></div>
+                    <div class="action-taken highlight-text" id="ai-action"></div>
                 </div>
-
             </section>
 
-            <!-- Right Column: Hospital Administration (Micro-Logistics) -->
+
+            <!-- Right Column: Hospital Administration -->
             <section class="panel hospital-panel">
                 <div class="panel-header">
                     <h2>Hospital Administration</h2>
                     <span class="badge secondary">Micro-Logistics</span>
                 </div>
 
-                <div class="hospital-grid">
-                    <div class="card bed-card">
-                        <div class="card-title">Emergency Bed Availability</div>
-                        <div class="bed-status-grid" id="bed-grid">
-                            <div class="bed-cube occupied">Bed 1 (Occ)</div>
-                            <div class="bed-cube occupied">Bed 2 (Occ)</div>
-                            <div class="bed-cube occupied">Bed 3 (Occ)</div>
-                            <div class="bed-cube available" id="target-bed">Bed 4 (Avail)</div>
-                            <div class="bed-cube available">Bed 5 (Avail)</div>
-                            <div class="bed-cube available">Bed 6 (Avail)</div>
-                        </div>
+                <div class="card bed-card">
+                    <div class="card-title">Emergency Intake Bed Grid</div>
+                    <div class="bed-status-grid huge-grid" id="bed-grid">
+                        <div class="bed-cube occupied">101 (Occ)</div>
+                        <div class="bed-cube occupied">102 (Occ)</div>
+                        <div class="bed-cube occupied">103 (Occ)</div>
+                        <div class="bed-cube available" id="target-bed">104 (Avail)</div>
+                        <div class="bed-cube available">105 (Avail)</div>
+                        <div class="bed-cube available">106 (Avail)</div>
+                        <div class="bed-cube occupied">201 (Occ)</div>
+                        <div class="bed-cube available">202 (Avail)</div>
+                        <div class="bed-cube available">203 (Avail)</div>
                     </div>
+                </div>
 
-                    <div class="card auth-card">
-                        <div class="card-title">Insurance Pre-Auth Stream</div>
-                        <ul class="auth-list" id="auth-list">
-                            <li><span class="status-dot green"></span> Pt. Smith - Approved</li>
-                            <li><span class="status-dot green"></span> Pt. Doe - Approved</li>
-                            <li><span class="status-dot orange"></span> Pt. Lee - Pending Auth</li>
-                        </ul>
-                    </div>
+                <div class="card auth-card">
+                    <div class="card-title">Live Insurance Pre-Auth Stream</div>
+                    <ul class="auth-list" id="auth-list">
+                        <li><span class="status-dot green"></span> Pt. Smith - Authorized (BlueCross)</li>
+                        <li><span class="status-dot green"></span> Pt. Doe - Authorized (Medicare)</li>
+                        <li><span class="status-dot orange"></span> Pt. Lee - Pending Review</li>
+                    </ul>
                 </div>
                 
                 <div class="orchestrator-status" id="orchestrator-status">
-                    <h3>Orchestrator Logs</h3>
+                    <h3>Synchronized Orchestrator Logs</h3>
                     <div class="terminal" id="terminal-logs">
+                        <p>> Handshake established across all node agents.</p>
                         <p>> System Idle. Awaiting macro-logistics drift.</p>
                     </div>
                 </div>
