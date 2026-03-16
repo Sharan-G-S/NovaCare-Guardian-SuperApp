@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 from nova_coldchain_guardian.config import project_root
 from nova_coldchain_guardian.models import IncidentInput, IncidentReport
@@ -11,8 +14,19 @@ from nova_coldchain_guardian.workflows.incident_response import IncidentResponse
 
 load_dotenv()
 
-app = FastAPI(title="Nova Cold Chain Guardian", version="0.1.0")
+app = FastAPI(title="NovaCare Guardian SuperApp", version="1.0.0")
+
+# Mount Static and Templates
+ui_path = project_root() / "src" / "ui"
+app.mount("/static", StaticFiles(directory=str(ui_path / "static")), name="static")
+templates = Jinja2Templates(directory=str(ui_path / "templates"))
+
 workflow = IncidentResponseWorkflow()
+
+
+@app.get("/")
+async def serve_ui(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/health")

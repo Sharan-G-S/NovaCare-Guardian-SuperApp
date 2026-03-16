@@ -17,12 +17,16 @@ I designed this to be a true "Super App" for the hackathon. It orchestrates mult
 Project Structure
 -----------------
 src/ - Core application code
-src/agents/ - Specialized Nova-powered agents (ColdChain, BedManager, PreAuth)
-src/orchestrator/ - Unified state management and cross-agent coordination
-src/tools/ - External integrations for IoT APIs, EHR systems, and mapping
-src/ui/ - Unified web interface for real-time monitoring and control
+src/nova_coldchain_guardian/ - FastAPI Backend & Agents
+src/ui/ - The "SuperApp" Operator Dashboard (HTML/CSS/JS)
 tests/ - Validation suite
 docs/ - Architectural documentation
+
+Quick Start (View Next-Gen UI)
+------------------------------
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run the server: `./run_local.sh` (or `uvicorn nova_coldchain_guardian.main:app --reload --app-dir src`)
+3. Open your browser to: **http://127.0.0.1:8000** to view the NovaCare Guardian SuperApp dashboard and run real-time multi-agent simulations!
 
 Judging Criteria Alignment
 --------------------------
